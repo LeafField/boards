@@ -14,8 +14,9 @@
   "author": "",
   "license": "ISC",
   "browserslist": [
-    "last 2 version",
-    "ie >= 11"
+    "> 0.2%, not dead",
+    "not IE 11",
+    "Safari > 11, iOS > 11"
   ],
   "devDependencies": {
     "@babel/core": "^7.20.12",
@@ -51,6 +52,9 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.2.1",
+    "@fortawesome/fontawesome-svg-core": "^6.2.1",
+    "@fortawesome/free-regular-svg-icons": "^6.2.1",
+    "@fortawesome/free-solid-svg-icons": "^6.2.1",
     "core-js": "^3.27.2",
     "regenerator-runtime": "^0.13.11"
   }

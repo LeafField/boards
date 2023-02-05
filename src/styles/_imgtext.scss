@@ -1,0 +1,39 @@
+@use "mixin" as *;
+
+.imgtext {
+  background-color: #ffffff;
+  padding: var(--v-space) 0;
+
+  & + .imgtext {
+    padding-top: 0;
+  }
+}
+
+.imgtext-container {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(45px, 6vw, 80px);
+
+  &.reverse {
+    @include mq(pc) {
+      flex-direction: row-reverse;
+    }
+  }
+
+  & > .text {
+    min-width: 17em;
+  }
+
+  @include mq(pc) {
+    flex-direction: row;
+    align-items: center;
+
+    & > .text {
+      flex: 1;
+    }
+
+    & > .img {
+      flex: 2;
+    }
+  }
+}

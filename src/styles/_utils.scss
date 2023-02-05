@@ -1,4 +1,57 @@
 .w-container {
   width: min(92%, 1166px);
   margin: auto;
+  position: relative;
+}
+
+.btn {
+  display: block;
+  width: 260px;
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  background-color: #e8b368;
+  color: #ffffff;
+  font-size: 18px;
+  text-align: center;
+  text-shadow: 0 0 6px #00000052;
+}
+
+.heading-decoration {
+  font-size: clamp(30px, 3vw, 40px);
+  min-height: 0vw;
+  font-weight: 400;
+
+  &::after {
+    display: block;
+    content: "";
+    width: 160px;
+    height: 0;
+    border-top: solid 1px #b72661;
+    margin-top: 0.6em;
+  }
+
+  & + p {
+    margin-top: 1em;
+    margin-bottom: 2em;
+    color: #707070;
+    font-family: "Montserrat", sans-serif;
+    font-size: 18px;
+  }
+}
+
+.heading {
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(40px, 5.2vw, 70px);
+  min-height: 0vw;
+  font-weight: 300;
+
+  position: absolute;
+  top: calc((var(--v-space) + 0.6em) * -1);
+
+  & span {
+    display: block;
+    color: #666666;
+    font-size: 18px;
+  }
 }
