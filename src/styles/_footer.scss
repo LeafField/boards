@@ -1,0 +1,66 @@
+@use "mixin" as *;
+
+.footer {
+  padding: 70px 0;
+  background-color: #ffffff;
+  color: #707070;
+  font-size: 13px;
+}
+
+.footer-container {
+  display: grid;
+  gap: 50px;
+  justify-items: center;
+}
+
+.footer-sns {
+  display: flex;
+  gap: 24px;
+  font-size: 24px;
+
+  & a {
+    display: grid;
+    place-items: center;
+    width: 36px;
+    aspect-ratio: 1 / 1;
+    background-color: #cccccc;
+    color: #ffffff;
+    clip-path: circle(50%);
+  }
+}
+
+@supports not (aspect-ratio: 1 / 1) {
+  .footer-sns {
+    height: 36px;
+  }
+}
+
+.footer-menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+@include mq(pc) {
+  .footer-container {
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto auto;
+    gap: 20px;
+  }
+
+  .footer-sns {
+    grid-column: 2;
+    grid-row: 1 / 4;
+    justify-self: end;
+    align-self: center;
+  }
+
+  .footer-site {
+    margin-bottom: 20px;
+  }
+
+  .footer-container > *:not(.footer-sns) {
+    justify-self: start;
+  }
+}

@@ -3,6 +3,8 @@
 @forward "hero";
 @forward "imgtext";
 @forward "posts";
+@forward "footer";
+@forward "entry";
 
 :root {
   --v-space: clamp(90px, 9vw, 120px);
@@ -28,8 +30,11 @@ h4,
 h5,
 h6,
 p,
-figure {
+figure,
+ul {
   margin: 0;
+  list-style: none;
+  padding: 0;
 }
 
 p {
