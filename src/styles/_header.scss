@@ -1,3 +1,5 @@
+@use "mixin" as *;
+
 .header {
   height: 112px !important;
   background-color: #ffffff;
@@ -22,4 +24,67 @@
   cursor: pointer;
   color: #aaaaaa;
   font-size: 30px;
+}
+
+// ハンバーガーメニュー
+@include mq(sp) {
+  .nav {
+    position: fixed;
+    inset: 0 -100% 0 100%;
+    z-index: 100;
+    background-color: #4e483ae6;
+    transition: transform 0.3s;
+
+    & ul {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      gap: 40px;
+      color: #ffffff;
+    }
+  }
+
+  .open .nav {
+    transform: translateX(-100%);
+  }
+
+  .open body {
+    position: fixed;
+    overflow: hidden;
+  }
+
+  .open .navbtn {
+    z-index: 110;
+    color: #ffffff;
+  }
+
+  .navbtn .fa-bars {
+    display: revert;
+  }
+  .open .navbtn .fa-bars {
+    display: none;
+  }
+
+  .navbtn .fa-x {
+    display: none;
+  }
+  .open .navbtn .fa-x {
+    display: revert;
+  }
+}
+
+// PC版ヘッダーメニュー
+
+@include mq(pc) {
+  .navbtn {
+    display: none;
+  }
+
+  .nav ul {
+    display: flex;
+    gap: 40px;
+    color: #707070;
+  }
 }
